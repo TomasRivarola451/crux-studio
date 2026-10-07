@@ -1,0 +1,32 @@
+:root {
+  --color-bg: #E5DCC3;
+  --color-bg-inverted: #141414;
+  --color-text: #141414;
+  --color-text-inverted: #F1ECE2;
+  --color-line: #141414;
+
+  --font-heading: 'Fraunces', serif;
+  --font-body: 'Inter', sans-serif;
+
+  --section-padding-y: 120px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+#root {
+  width: 100%;
+}

@@ -1,0 +1,141 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(
+      to top,
+      rgba(10, 10, 10, 0.55) 0%,
+      rgba(10, 10, 10, 0.15) 45%,
+      rgba(10, 10, 10, 0.1) 100%
+    ),
+    url("../../assets/hero-bg.webp") center / cover no-repeat;
+  color: var(--color-text-inverted);
+}
+
+.content {
+  padding: 0 8%;
+  max-width: 720px;
+}
+
+/* Escalón 1: grande — antes clamp(2.5rem, 4.2vw, 3.5rem) */
+.titleMain {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: clamp(3rem, 6vw, 4.75rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Escalón 2: mediano, itálica — antes clamp(1.4rem, 2.4vw, 1.9rem) */
+.titleSub {
+  font-family: var(--font-heading);
+  font-style: normal;
+  font-weight: 400;
+  font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+  line-height: 1.2;
+  margin: 16px 0 0;
+  white-space: nowrap;
+  color: #e6ddc8;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Escalón 3: chico — antes 0.85rem */
+.subtext {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+  max-width: 400px;
+  margin: 40px 0 44px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 17px 28px;
+  background-color: var(--color-bg);
+  border-radius: 999px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.cta:hover {
+  opacity: 0.85;
+}
+
+.scroll {
+  position: absolute;
+  bottom: 36px;
+  left: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-inverted);
+  opacity: 0.8;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 36px;
+  background-color: var(--color-text-inverted);
+}
+
+.signature {
+  position: absolute;
+  bottom: 36px;
+  right: 8%;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.line {
+  width: 32px;
+  height: 1px;
+  background-color: var(--color-text-inverted);
+  opacity: 0.7;
+}
+
+.signatureText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-inverted);
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .titleMain {
+    font-size: 2.4rem;
+  }
+
+  .titleSub {
+    font-size: 1.5rem;
+    white-space: normal;
+  }
+
+  .signature {
+    display: none;
+  }
+}
