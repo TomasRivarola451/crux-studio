@@ -1,11 +1,11 @@
 :root {
-  --color-bg: #E5DCC3;
+  --color-bg: #EAE4D6;
   --color-bg-inverted: #141414;
   --color-text: #141414;
   --color-text-inverted: #F1ECE2;
   --color-line: #141414;
 
-  --font-heading: 'Fraunces', serif;
+  --font-heading: 'Cormorant Garamond', serif;
   --font-body: 'Inter', sans-serif;
 
   --section-padding-y: 120px;

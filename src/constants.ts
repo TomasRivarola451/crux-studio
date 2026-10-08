@@ -9,7 +9,7 @@ export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIC
 )}`;
 
 export const INSTAGRAM_HANDLE = "@crux.studio";
-export const INSTAGRAM_URL = "https://instagram.com/crux.studio";
+export const INSTAGRAM_URL = "https://instagram.com/cruxstudio.mza";
 
 export const LOCATION_AREA = "Chacras de Coria, Luján de Cuyo, Mendoza";
 
