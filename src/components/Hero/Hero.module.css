@@ -19,7 +19,6 @@
   max-width: 720px;
 }
 
-/* Escalón 1: grande — antes clamp(2.5rem, 4.2vw, 3.5rem) */
 .titleMain {
   font-family: var(--font-heading);
   font-weight: 400;
@@ -30,7 +29,6 @@
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Escalón 2: mediano, itálica — antes clamp(1.4rem, 2.4vw, 1.9rem) */
 .titleSub {
   font-family: var(--font-heading);
   font-style: normal;
@@ -43,7 +41,6 @@
   text-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
 }
 
-/* Escalón 3: chico — antes 0.85rem */
 .subtext {
   font-family: var(--font-body);
   font-size: 1rem;
@@ -126,6 +123,18 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    min-height: 100svh;
+    background:
+      linear-gradient(
+        to top,
+        rgba(10, 10, 10, 0.55) 0%,
+        rgba(10, 10, 10, 0.15) 45%,
+        rgba(10, 10, 10, 0.1) 100%
+      ),
+      url("../../assets/hero-bg-mobile.png") center / cover no-repeat;
+  }
+
   .titleMain {
     font-size: 2.4rem;
   }
