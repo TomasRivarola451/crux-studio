@@ -10,7 +10,7 @@
       rgba(10, 10, 10, 0.15) 45%,
       rgba(10, 10, 10, 0.1) 100%
     ),
-    url("../../assets/hero-bg.webp") center / cover no-repeat;
+    url("../../assets/HeroCrux.webp") center / cover no-repeat;
   color: var(--color-text-inverted);
 }
 
@@ -132,7 +132,7 @@
         rgba(10, 10, 10, 0.15) 45%,
         rgba(10, 10, 10, 0.1) 100%
       ),
-      url("../../assets/hero-bg-mobile.png") center / cover no-repeat;
+      url("../../assets/HeroMobile.webp") center / cover no-repeat;
   }
 
   .titleMain {
