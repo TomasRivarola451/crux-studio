@@ -23,11 +23,11 @@ export default function Specialties() {
     <section id="estilos" className={styles.section}>
       <span className={styles.overline}>Estilos</span>
       <div className={styles.divider} />
-      <h2 className={styles.heading}>Cómo trabajamos la piel</h2>
+      <h2 data-reveal className={styles.heading}>Cómo trabajamos la piel</h2>
 
       <div className={styles.grid}>
         {SPECIALTIES.map((s, i) => (
-          <div key={s.title} className={styles.card}>
+          <div key={s.title} data-reveal className={styles.card}>
             <div className={styles.imageWrapper}>
               <div className={styles.imagePlaceholder} aria-hidden="true">
                 Foto: {s.title}

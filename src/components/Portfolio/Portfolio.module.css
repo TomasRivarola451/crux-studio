@@ -15,7 +15,7 @@
   font-size: 0.85rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #766f5a;
+  color: #655f4d;
 }
 
 .divider {
@@ -76,10 +76,10 @@
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.arrowButton:hover {
+@media (hover:hover) and (pointer:fine) { .arrowButton:hover {
   background-color: var(--color-bg-inverted);
   color: var(--color-text-inverted);
-}
+} }
 
 .track {
   display: flex;
@@ -104,7 +104,7 @@
   justify-content: center;
   font-family: var(--font-body);
   font-size: 0.85rem;
-  color: #766f5a;
+  color: #655f4d;
 }
 
 @media (max-width: 768px) {
@@ -126,3 +126,15 @@
     flex-basis: 260px;
   }
 }
+
+.item { transition:background-color 250ms; }
+.track { scroll-padding-inline:8%; }
+@media (hover:hover) and (pointer:fine) { .item:hover { background-color:#cec2a1; } }
+@media (max-width:768px) {
+.header { padding:0 6%; margin-bottom:32px; }
+.heading { font-size:clamp(2rem,8vw,2.75rem); }
+.track { padding-inline:6%; scroll-padding-inline:6%; }
+.item { flex-basis:min(260px,82vw); }
+.headerRight { width:100%; flex-shrink:1; }
+}
+@media (min-width:769px) and (max-width:1024px) { .headerRow { gap:24px; } .headerRight { flex-shrink:1; } }

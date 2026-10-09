@@ -34,12 +34,34 @@
   transition: opacity 0.2s ease;
 }
 
-.navLink:hover {
+@media (hover:hover) and (pointer:fine) { .navLink:hover {
   opacity: 1;
-}
+} }
 
 @media (max-width: 768px) {
   .nav {
     display: none;
   }
+}
+.toggle { display:none; }
+.menu { background:#141414; color:var(--color-text-inverted); border:0; }
+@media (hover:hover) and (pointer:fine) {
+.navLink { position:relative; }
+.navLink::after { content:""; position:absolute; bottom:-6px; left:0; width:100%; height:1px; background:currentColor; transform:scaleX(0); transform-origin:left; transition:transform 250ms; }
+.navLink:hover::after { transform:scaleX(1); }
+}
+@media (max-width:768px) {
+.header { padding:max(16px,env(safe-area-inset-top)) 6% 16px; }
+.toggle { display:flex; flex-direction:column; justify-content:center; align-items:center; gap:6px; width:44px; height:44px; border:0; background:transparent; color:var(--color-text-inverted); cursor:pointer; }
+.toggle span { width:22px; height:1px; background:currentColor; transition:transform 250ms; }
+.close span:first-child { transform:translateY(3.5px) rotate(45deg); }
+.close span:last-child { transform:translateY(-3.5px) rotate(-45deg); }
+.menu { position:fixed; inset:0; width:100%; max-width:none; height:100%; height:100dvh; max-height:none; margin:0; padding:max(16px, env(safe-area-inset-top)) 6% max(32px, env(safe-area-inset-bottom)); overflow-y:auto; opacity:0; transform:translateY(-12px); transition:opacity 250ms, transform 250ms, display 250ms allow-discrete, overlay 250ms allow-discrete; }
+.menu[open] { opacity:1; transform:translateY(0); }
+@starting-style { .menu[open] { opacity:0; transform:translateY(-12px); } }
+.menu::backdrop { background:#141414; }
+.menuTop { display:flex; justify-content:space-between; align-items:center; }
+.mobileNav { display:flex; flex-direction:column; align-items:flex-start; gap:20px; padding:clamp(32px,8vh,80px) 0 24px; }
+.mobileNav > a { font-family:var(--font-heading); font-size:clamp(2rem,8vw,3rem); color:inherit; text-decoration:none; min-height:44px; }
+.mobileNav .menuCta { display:inline-flex; align-items:center; gap:20px; margin-top:16px; padding:15px 24px; border-radius:999px; background:var(--color-bg); color:#141414; font:0.75rem var(--font-body); letter-spacing:0.06em; text-transform:uppercase; }
 }

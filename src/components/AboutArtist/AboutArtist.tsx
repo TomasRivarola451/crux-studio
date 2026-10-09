@@ -4,21 +4,8 @@ import aboutImage from "../../assets/about-artist.png";
 
 export default function AboutArtist() {
   return (
-    <section id="sobre-vos" className={styles.section}>
-      <div className={styles.imageColumn}>
-        <div className={styles.imageFrame}>
-          <img
-            src={aboutImage}
-            alt={`${ARTIST_NAME} trabajando en ${STUDIO_NAME}`}
-            className={styles.image}
-          />
-        </div>
-        <p className={styles.caption}>
-          {ARTIST_NAME} — {STUDIO_NAME}
-        </p>
-      </div>
-
-      <div className={styles.textColumn}>
+    <section id="sobre-mi" className={styles.section}>
+      <div data-reveal className={styles.textColumn}>
         <span className={styles.overline}>El artista</span>
         <div className={styles.divider} />
         <h2 className={styles.heading}>Detrás de las agujas</h2>
@@ -34,6 +21,20 @@ export default function AboutArtist() {
           impecable y el asesoramiento personalizado.
         </p>
       </div>
+
+      <div data-reveal className={styles.imageColumn}>
+        <div className={styles.imageFrame}>
+          <img
+            src={aboutImage}
+            alt={`${ARTIST_NAME} trabajando en ${STUDIO_NAME}`}
+            className={styles.image}
+          />
+        </div>
+        <p className={styles.caption}>
+          {ARTIST_NAME} — {STUDIO_NAME}
+        </p>
+      </div>
+
     </section>
   );
 }

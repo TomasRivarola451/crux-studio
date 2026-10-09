@@ -16,7 +16,7 @@ export default function ContactFooter() {
         <div className={styles.divider} />
 
         <div className={styles.grid}>
-          <div className={styles.mainColumn}>
+          <div data-reveal className={styles.mainColumn}>
             <h2 className={styles.heading}>
               ¿Tenés una idea
               <br />
@@ -37,7 +37,7 @@ export default function ContactFooter() {
             </a>
           </div>
 
-          <div className={styles.card}>
+          <div data-reveal className={styles.card}>
             <div className={styles.cardRow}>
               <span className={styles.cardLabel}>WhatsApp</span>
               <a

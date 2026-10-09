@@ -11,12 +11,12 @@ export default function Portfolio() {
     if (!track) return;
     const itemWidth = track.querySelector(`.${styles.item}`)?.clientWidth ?? 320;
     const amount = direction === "next" ? itemWidth + 16 : -(itemWidth + 16);
-    track.scrollBy({ left: amount, behavior: "smooth" });
+    track.scrollBy({ left: amount, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
   };
 
   return (
     <section id="trabajos" className={styles.section}>
-      <div className={styles.header}>
+      <div data-reveal className={styles.header}>
         <span className={styles.overline}>Portfolio</span>
         <div className={styles.divider} />
         <div className={styles.headerRow}>
@@ -48,7 +48,7 @@ export default function Portfolio() {
         </div>
       </div>
 
-      <div className={styles.track} ref={trackRef}>
+      <div className={styles.track} ref={trackRef} tabIndex={0} role="region" aria-label="Galería de trabajos">
         {Array.from({ length: PLACEHOLDER_COUNT }).map((_, i) => (
           <div key={i} className={styles.item} aria-hidden="true">
             Foto {i + 1}

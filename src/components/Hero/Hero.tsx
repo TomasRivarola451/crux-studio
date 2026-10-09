@@ -22,7 +22,7 @@ export default function Hero() {
           rel="noopener noreferrer"
           className={styles.cta}
         >
-          Reservar turno por WhatsApp
+          Reservar turno
           <span aria-hidden="true">→</span>
         </a>
       </div>

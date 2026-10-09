@@ -1,6 +1,7 @@
 .section {
   display: grid;
   grid-template-columns: 42% 1fr;
+  grid-template-areas: "image text";
   gap: 64px;
   align-items: start;
   padding: var(--section-padding-y) 8%;
@@ -9,6 +10,7 @@
 }
 
 .imageColumn {
+  grid-area: image;
   display: flex;
   flex-direction: column;
 }
@@ -31,10 +33,11 @@
   font-size: 0.75rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #766f5a;
+  color: #655f4d;
 }
 
 .textColumn {
+  grid-area: text;
   padding-top: 8px;
 }
 
@@ -44,7 +47,7 @@
   font-size: 0.85rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #766f5a;
+  color: #655f4d;
 }
 
 .divider {
@@ -73,6 +76,17 @@
 @media (max-width: 768px) {
   .section {
     grid-template-columns: 1fr;
+    grid-template-areas: "text" "image";
     padding: 64px 6%;
   }
+}
+
+.section > * { min-width:0; }
+@media (max-width:768px) {
+.section { gap:32px; }
+.imageColumn { max-width:440px; width:100%; }
+.heading { font-size:clamp(2rem,8vw,2.75rem); line-height:1.1; margin-bottom:24px; }
+.paragraph { font-size:1rem; line-height:1.7; margin:0 0 18px; }
+.divider { margin:16px 0 24px; }
+.textColumn { padding-top:0; }
 }
