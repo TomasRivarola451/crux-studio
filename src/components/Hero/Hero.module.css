@@ -54,22 +54,21 @@
 .cta {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 17px 28px;
+  gap: 18px;
+  min-height: 54px;
+  padding: 19px 34px;
   background-color: var(--color-bg);
   border-radius: 999px;
   color: var(--color-text);
   text-decoration: none;
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   transition: opacity 0.2s ease;
 }
 
-@media (hover:hover) and (pointer:fine) { .cta:hover {
-  opacity: 0.85;
-} }
+
 
 .scroll {
   position: absolute;
@@ -152,9 +151,9 @@
 .titleSub { animation-delay:70ms; }
 .subtext { animation-delay:140ms; }
 .cta { animation-delay:210ms; min-height:44px; }
-.cta span { transition:transform 250ms; }
+
 @keyframes heroEntry { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:translateY(0); } }
-@media (hover:hover) and (pointer:fine) { .cta:hover span { transform:translateX(3px); } }
+
 @media (max-width: 768px) {
   .hero {
     min-height: 100vh;
@@ -200,10 +199,11 @@
   }
 
   .cta {
-    min-height: 44px;
-    padding: 14px 22px;
-    font-size: 0.72rem;
-    gap: 18px;
+    min-height: 50px;
+    max-width: 100%;
+    padding: 16px 28px;
+    font-size: 0.78rem;
+    gap: 20px;
   }
 
   .scroll {
@@ -228,3 +228,34 @@
   .line { width: 20px; }
 }
 @media (prefers-reduced-motion:reduce) { .content > * { animation:none; } }
+
+.cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  gap: 22px;
+  transition: color 350ms ease, opacity 180ms ease;
+}
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background-color: var(--color-bg-inverted);
+  transform: translateX(-101%);
+  transition: transform 400ms ease;
+}
+.ctaLabel, .ctaArrow { position: relative; }
+.ctaArrow { transition: transform 350ms ease; }
+.cta:active { color: var(--color-text-inverted); }
+.cta:active::before { transform: translateX(0); }
+.cta:active .ctaLabel, .cta:active .ctaArrow { opacity: 0.72; }
+@media (hover: hover) and (pointer: fine) {
+  .cta:hover { color: var(--color-text-inverted); }
+  .cta:hover::before { transform: translateX(0); }
+  .cta:hover .ctaArrow { transform: translateX(5px); }
+}
+.cta:focus-visible { outline: 2px solid var(--color-text-inverted); outline-offset: 5px; }
+@media (prefers-reduced-motion: reduce) { .cta, .cta::before, .ctaArrow { transition: none; } }
+

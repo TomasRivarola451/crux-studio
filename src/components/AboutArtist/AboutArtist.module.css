@@ -1,9 +1,9 @@
 .section {
   display: grid;
-  grid-template-columns: 42% 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   grid-template-areas: "image text";
-  gap: 64px;
-  align-items: start;
+  gap: clamp(32px, 4vw, 56px);
+  align-items: center;
   padding: var(--section-padding-y) 8%;
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -15,16 +15,13 @@
   flex-direction: column;
 }
 
-.imageFrame {
-  border: 1px solid var(--color-line);
-  padding: 14px;
-}
-
 .image {
   display: block;
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
+  object-position: center 62%;
 }
 
 .caption {
@@ -38,7 +35,7 @@
 
 .textColumn {
   grid-area: text;
-  padding-top: 8px;
+  padding-top: 0;
 }
 
 .overline {
@@ -84,9 +81,11 @@
 .section > * { min-width:0; }
 @media (max-width:768px) {
 .section { gap:32px; }
-.imageColumn { max-width:440px; width:100%; }
+.imageColumn { width:100%; }
 .heading { font-size:clamp(2rem,8vw,2.75rem); line-height:1.1; margin-bottom:24px; }
 .paragraph { font-size:1rem; line-height:1.7; margin:0 0 18px; }
 .divider { margin:16px 0 24px; }
 .textColumn { padding-top:0; }
 }
+
+@media (max-width: 768px) { .imageColumn { max-width: 440px; } }

@@ -22,8 +22,8 @@ export default function Hero() {
           rel="noopener noreferrer"
           className={styles.cta}
         >
-          Reservar turno
-          <span aria-hidden="true">→</span>
+          <span className={styles.ctaLabel}>Reservar turno</span>
+          <span className={styles.ctaArrow} aria-hidden="true">→</span>
         </a>
       </div>
 

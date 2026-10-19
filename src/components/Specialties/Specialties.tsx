@@ -1,20 +1,29 @@
+import ImageLightbox from "../ImageLightbox/ImageLightbox";
 import styles from "./Specialties.module.css";
 
+// Cambiá solo image por la ruta de tu nueva foto, guardada en public/estilos/.
+// Ejemplo: image: "/estilos/mi-tatuaje.webp". También podés reemplazar el archivo de ejemplo.
 const SPECIALTIES = [
   {
-    title: "Blackwork & Puntillismo",
-    description:
-      "Piezas de alto contraste, sombras texturizadas mediante puntillismo de arrastre y bloques de negro sólido.",
+    title: "Fine Line",
+    image: "/src/assets/fineline.webp",
+    alt: "Foto de ejemplo para Fine Line",
+    position: "center",
+    description: "Líneas finas, trazos delicados y composiciones minimalistas. Diseños que encuentran su fuerza en los pequeños detalles.",
   },
   {
-    title: "Fine Line & Linework",
-    description:
-      "Trazos limpios, precisos y de calibre fino, ideales para composiciones delicadas, minimalistas y geométricas.",
+    title: "Blackwork",
+    image: "/src/assets/blackwork.webp",
+    alt: "Foto de ejemplo para Blackwork",
+    position: "center",
+    description: "El negro como protagonista. Contrastes intensos, formas definidas y composiciones con carácter.",
   },
   {
-    title: "Diseños Personalizados",
-    description:
-      "Proyectos desarrollados desde cero en el estudio, combinando técnicas para dar vida a ideas originales.",
+    title: "Tradicional",
+    image: "/src/assets/tradicional.webp",
+    alt: "Foto de ejemplo para Tradicional",
+    position: "center",
+    description: "Líneas sólidas, colores definidos y diseños clásicos que mantienen su identidad con el paso del tiempo.",
   },
 ];
 
@@ -29,9 +38,18 @@ export default function Specialties() {
         {SPECIALTIES.map((s, i) => (
           <div key={s.title} data-reveal className={styles.card}>
             <div className={styles.imageWrapper}>
-              <div className={styles.imagePlaceholder} aria-hidden="true">
-                Foto: {s.title}
-              </div>
+              <ImageLightbox src={s.image} alt={s.alt} className={styles.photoButton}>
+              <img
+                className={styles.image}
+                src={s.image}
+                alt={s.alt}
+                width={960}
+                height={1280}
+                loading="lazy"
+                decoding="async"
+                style={{ objectPosition: s.position }}
+              />
+              </ImageLightbox>
               <span className={styles.number}>
                 {String(i + 1).padStart(2, "0")}
               </span>

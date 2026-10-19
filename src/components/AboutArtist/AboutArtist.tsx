@@ -23,13 +23,11 @@ export default function AboutArtist() {
       </div>
 
       <div data-reveal className={styles.imageColumn}>
-        <div className={styles.imageFrame}>
-          <img
+        <img
             src={aboutImage}
             alt={`${ARTIST_NAME} trabajando en ${STUDIO_NAME}`}
             className={styles.image}
           />
-        </div>
         <p className={styles.caption}>
           {ARTIST_NAME} — {STUDIO_NAME}
         </p>
