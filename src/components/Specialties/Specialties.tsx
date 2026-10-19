@@ -6,21 +6,21 @@ import styles from "./Specialties.module.css";
 const SPECIALTIES = [
   {
     title: "Fine Line",
-    image: "/src/assets/fineline.webp",
+    image: "/estilos/fineline.webp",
     alt: "Foto de ejemplo para Fine Line",
     position: "center",
     description: "Líneas finas, trazos delicados y composiciones minimalistas. Diseños que encuentran su fuerza en los pequeños detalles.",
   },
   {
     title: "Blackwork",
-    image: "/src/assets/blackwork.webp",
+    image: "/estilos/blackwork.webp",
     alt: "Foto de ejemplo para Blackwork",
     position: "center",
     description: "El negro como protagonista. Contrastes intensos, formas definidas y composiciones con carácter.",
   },
   {
     title: "Tradicional",
-    image: "/src/assets/tradicional.webp",
+    image: "/estilos/tradicional.webp",
     alt: "Foto de ejemplo para Tradicional",
     position: "center",
     description: "Líneas sólidas, colores definidos y diseños clásicos que mantienen su identidad con el paso del tiempo.",

@@ -54,7 +54,7 @@ export default function Portfolio() {
 
       <div className={styles.track} ref={trackRef} tabIndex={0} role="region" aria-label="Galería de trabajos" aria-describedby="portfolio-description">
         {portfolioImages.map((photo) => (
-          <div key={photo.id} data-reveal className={styles.item}>
+          <div key={photo.id} className={styles.item}>
             <ImageLightbox src={photo.src} alt={photo.alt ?? "Trabajo de tatuaje"} className={styles.photoButton}>
             <img
               src={photo.src}
