@@ -31,7 +31,7 @@ body {
   width: 100%;
 }
 html { scroll-behavior:smooth; }
-section[id], footer[id] { scroll-margin-top:88px; }
+section[id], footer[id] { scroll-margin-top:var(--header-offset, 104px); }
 img { max-width:100%; }
 button, a { -webkit-tap-highlight-color:transparent; }
 a:focus-visible, button:focus-visible, [tabindex]:focus-visible { outline:2px solid currentColor; outline-offset:5px; }

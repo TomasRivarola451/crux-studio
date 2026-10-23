@@ -1,5 +1,5 @@
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -65,3 +65,22 @@
 .mobileNav > a { font-family:var(--font-heading); font-size:clamp(2rem,8vw,3rem); color:inherit; text-decoration:none; min-height:44px; }
 .mobileNav .menuCta { display:inline-flex; align-items:center; gap:20px; margin-top:16px; padding:15px 24px; border-radius:999px; background:var(--color-bg); color:#141414; font:0.75rem var(--font-body); letter-spacing:0.06em; text-transform:uppercase; }
 }
+
+/* Fixed positioning retains the original overlay layout without a spacer. */
+.header {
+  color: var(--color-text-inverted);
+  background-color: transparent;
+  box-shadow: inset 0 -1px transparent;
+  transition: transform 280ms ease, background-color 280ms ease, color 280ms ease, box-shadow 280ms ease;
+}
+.header[data-solid="true"] {
+  background-color: #F1ECE2;
+  color: #141414;
+  box-shadow: inset 0 -1px rgb(20 20 20 / 12%);
+}
+.header > .logo, .header > .nav .navLink, .header > .toggle { color: inherit; }
+.header[data-hidden="true"] { transform: translateY(-100%); pointer-events: none; }
+.header:has(:focus-visible) { transform: translateY(0); pointer-events: auto; }
+.menu .logo, .menu .toggle { color: var(--color-text-inverted); }
+@media (prefers-reduced-motion: reduce) { .header { transition: none; } }
+
