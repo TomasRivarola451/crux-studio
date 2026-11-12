@@ -131,7 +131,7 @@
         rgba(10, 10, 10, 0.15) 45%,
         rgba(10, 10, 10, 0.1) 100%
       ),
-      url("../../assets/hero-juan-cruz.png") 60% center / cover no-repeat;
+      url("../../assets/hero-juan-cruz-mobile.png") center / cover no-repeat;
   }
 
   .titleMain {
