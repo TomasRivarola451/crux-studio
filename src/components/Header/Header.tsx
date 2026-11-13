@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./Header.module.css";
 import { STUDIO_NAME, WHATSAPP_LINK } from "../../constants";
-const links = [{label:"Trabajos",href:"#trabajos"},{label:"Sobre mí",href:"#sobre-mi"},{label:"Estilos",href:"#estilos"},{label:"Contacto",href:"#contacto"}];
+const links = [{label:"Sobre mí",href:"#sobre-mi"},{label:"Trabajos",href:"#trabajos"},{label:"Estilos",href:"#estilos"},{label:"Contacto",href:"#contacto"}];
 export default function Header() {
   const [open,setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
